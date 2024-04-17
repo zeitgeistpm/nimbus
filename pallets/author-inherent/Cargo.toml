@@ -1,31 +1,31 @@
 [package]
 name = "pallet-author-inherent"
-authors = [ "PureStake" ]
+authors = [ "paritytech" ]
 description = "This pallet is the core of the in-runtime portion of Nimbus."
 edition = "2021"
 license = "GPL-3.0-only"
 version = "0.9.0"
 
 [dependencies]
-frame-support = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-frame-system = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
+frame-support = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+frame-system = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
 log = { version = "0.4.17", default-features = false }
 nimbus-primitives = { path = "../../nimbus-primitives", default-features = false }
 parity-scale-codec = { version = "3.0.0", default-features = false, features = [ "derive" ] }
 scale-info = { version = "2.0.0", default-features = false, features = [ "derive" ] }
-sp-api = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-sp-application-crypto = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-sp-inherents = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-sp-runtime = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-sp-std = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
+sp-api = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+sp-application-crypto = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+sp-inherents = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+sp-std = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
 
 # Benchmarks
-frame-benchmarking = { git = "https://github.com/PureStake/substrate", optional = true, default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
+frame-benchmarking = { git = "https://github.com/paritytech/substrate", optional = true, default-features = false , branch = "polkadot-v0.9.40" }
 
 [dev-dependencies]
-frame-support-test = { git = "https://github.com/PureStake/substrate", version = "3.0.0" , branch = "moonbeam-polkadot-v0.9.40" }
-sp-core = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
-sp-io = { git = "https://github.com/PureStake/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.40" }
+frame-support-test = { git = "https://github.com/paritytech/substrate", version = "3.0.0" , branch = "polkadot-v0.9.40" }
+sp-core = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
+sp-io = { git = "https://github.com/paritytech/substrate", default-features = false , branch = "polkadot-v0.9.40" }
 
 [features]
 default = [ "std" ]
@@ -48,3 +48,5 @@ runtime-benchmarks = [
 	"frame-benchmarking",
 	"nimbus-primitives/runtime-benchmarks",
 ]
+
+try-runtime = ["frame-support/try-runtime", "frame-system/try-runtime"]
